@@ -1,11 +1,14 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
+ 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://propertytaxcalc.net'
   return [
-    { url: "https://propertytaxcalc.net/", lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1.0 },
-    { url: "https://propertytaxcalc.net/calculator/", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: "https://propertytaxcalc.net/learn/property-tax-rates-by-state/", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: "https://propertytaxcalc.net/learn/how-to-appeal-property-tax/", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: "https://propertytaxcalc.net/learn/states-with-lowest-property-taxes/", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: "https://propertytaxcalc.net/about/", lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.5 },
-  ];
+    { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/disclaimer`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/methodology`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+  ]
 }
