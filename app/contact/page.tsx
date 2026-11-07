@@ -15,13 +15,7 @@ export default function ContactPage() {
         </p>
         <div className="bg-gray-50 rounded-lg p-8 mt-8 border border-gray-200">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h2>
-          <p className="mb-2"><strong>Email:</strong> support@propertytaxcalc.net</p>
-          <p className="mb-6 text-sm text-gray-500">We aim to respond to all inquiries within 24-48 business hours.</p>
-          
-          <h3 className="text-lg font-medium text-gray-900 mt-6 mb-3">Mailing Address</h3>
-          <p className="mb-1">propertytaxcalc.net Support Team</p>
-          <p className="mb-1">123 Web Tools Plaza, Suite 400</p>
-          <p>Digital City, DC 10001</p>
+          <p className="mb-2"><strong>Email:</strong> <a href="mailto:info@clearpasstechnologies.com">info@clearpasstechnologies.com</a></p>
         </div>
       </div>
     </div>
