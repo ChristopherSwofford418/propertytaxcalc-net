@@ -3,6 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Disclaimer | propertytaxcalc.net",
   description: "Read our legal and financial disclaimer regarding the use of propertytaxcalc.net tools.",
+  alternates: { canonical: "/disclaimer/" },
 };
 
 export default function DisclaimerPage() {

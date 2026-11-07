@@ -1,41 +1,22 @@
-import { Metadata } from "next";
-
+import type { Metadata } from "next";
+import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Methodology & Sources | propertytaxcalc.net",
-  description: "Learn how propertytaxcalc.net calculates estimates and the data sources we rely on.",
+  title: "Methodology and Sources",
+  description: "How the property tax estimator works, its limits, and sources for further reading.",
+  alternates: { canonical: "/methodology/" },
 };
-
 export default function MethodologyPage() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Methodology & Sources</h1>
-      <div className="prose prose-blue max-w-none text-gray-600">
-        <p className="text-lg leading-relaxed mb-6">
-          Transparency is a core value at propertytaxcalc.net. We want you to understand exactly how our tools generate their estimates and where the underlying data comes from.
-        </p>
-        
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">How We Calculate</h2>
-        <p className="mb-6">
-          Our calculators use deterministic mathematical models based on established industry practices. We do not use "black box" algorithms or opaque AI models to generate financial or legal estimates. When you input a value, the calculator applies a fixed formula (such as standard amortization for loans, or typical multiplier ranges for settlements) to produce the output.
-        </p>
-        <p className="mb-6">
-          Where ranges are provided, we typically calculate a conservative "low" estimate and a standard "high" estimate to reflect the natural variance in real-world scenarios.
-        </p>
-
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Data Sourcing</h2>
-        <p className="mb-4">Our baseline assumptions, default values, and reference points are drawn from publicly available, authoritative sources, including:</p>
-        <ul className="list-disc pl-6 mb-6 space-y-2">
-          <li>Federal and state government publications (e.g., IRS, SSA, BLS)</li>
-          <li>Academic research and peer-reviewed studies</li>
-          <li>Aggregated public legal settlement data</li>
-          <li>Industry association reports and guidelines</li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Editorial Review</h2>
-        <p className="mb-6">
-          Before a new calculator is published, its formulas are manually tested against known case studies or established reference points to ensure mathematical accuracy. We periodically review our tools to ensure they remain aligned with current laws, tax brackets, and market conditions.
-        </p>
-      </div>
-    </div>
-  );
+  return <article className="max-w-3xl mx-auto px-4 py-12 prose-article">
+    <h1 className="text-3xl font-bold">Methodology and Sources</h1>
+    <h2>Calculation</h2>
+    <p>The <Link href="/calculator/">calculator</Link> uses only the values you enter. Taxable value = assessed value − applicable exemption reduction. Estimated annual tax = taxable value × local rate ÷ 100. The monthly equivalent is the annual estimate ÷ 12. Results are displayed to the nearest cent.</p>
+    <p>For an illustrative—not current—example, a $350,000 assessment with a $25,000 reduction and a 1.5% rate gives $325,000 × 0.015 = $4,875 per year, or $406.25 per month.</p>
+    <h2>Limitations</h2>
+    <p>We do not supply rates, assess property, or determine exemptions. Assessed value may differ from market value. Enter taxable value with no further reduction if an assessment already reflects an exemption. Combine rates only when each applies to the same taxable value and period. Separate levies may have different bases or exemptions; credits, caps, special assessments, fees, and escrow adjustments are not included. Consult your local taxing authorities for an actual bill.</p>
+    <h2>Primary sources</h2><ul>
+      <li><a href="https://www.tax.ny.gov/pit/property/learn/proptax.htm">New York Department of Taxation and Finance: Property taxes</a> describes local property taxes in New York; other states have different rules.</li>
+      <li><a href="https://www.tax.ny.gov/pit/property/exemption/index.htm">New York Department of Taxation and Finance: Property tax exemptions</a> describes examples and local eligibility in New York.</li>
+      <li><a href="https://www.boe.ca.gov/proptaxes/faqs/assessappeals.htm">California State Board of Equalization: Assessment appeals FAQ</a> explains California&apos;s process, not nationwide deadlines.</li>
+    </ul>
+  </article>;
 }

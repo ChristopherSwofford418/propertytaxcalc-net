@@ -9,8 +9,7 @@ type AdSlotProps = {
 
 /**
  * AdSense slot component.
- * - Dev / staging (NEXT_PUBLIC_ADS_ENABLED != "true"): renders a visible placeholder
- *   so layout space is reserved (CLS-safe) without loading real ads.
+ * - When ads are disabled, no mock ad is shown.
  * - Production (NEXT_PUBLIC_ADS_ENABLED === "true"): renders a proper AdSense <ins>
  *   unit and immediately calls adsbygoogle.push({}) so the slot initialises as soon
  *   as the HTML is parsed — no React hooks needed, compatible with Next.js static export.
@@ -22,13 +21,6 @@ export default function AdSlot({
 }: AdSlotProps) {
   const isProd = process.env.NEXT_PUBLIC_ADS_ENABLED === "true";
 
-  const dims =
-    format === "horizontal"
-      ? "h-24 md:h-28"
-      : format === "rectangle"
-      ? "h-72"
-      : "h-[600px]";
-
   const adFormat =
     format === "horizontal"
       ? "horizontal"
@@ -36,19 +28,8 @@ export default function AdSlot({
       ? "rectangle"
       : "vertical";
 
-  // Development / staging: render a visible placeholder so layout is preserved
-  if (!isProd) {
-    return (
-      <div
-        aria-hidden
-        data-ad-slot={slot}
-        className={`my-6 mx-auto max-w-3xl ${dims} bg-soft border border-dashed border-line rounded-md flex items-center justify-center text-xs text-gray-400 ${className}`}
-      >
-        ad slot · {slot} · {format}
-      </div>
-    );
-  }
-
+  // Do not display placeholder labels when advertising is disabled.
+  if (!isProd) return null;
   // Production: render a proper AdSense <ins> unit.
   return (
     <div className={`my-6 mx-auto max-w-3xl overflow-hidden ${className}`}>

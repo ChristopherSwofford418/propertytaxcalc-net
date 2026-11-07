@@ -4,21 +4,19 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://propertytaxcalc.net"),
   title: {
-    default: "PropertyTaxCalculator — Property Tax Rates by State & County",
+    default: "PropertyTaxCalculator — Local Rate Estimator",
     template: "%s · PropertyTaxCalculator",
   },
-  description: "Free property tax calculator. Look up property tax rates by state, county, and city. Estimate your annual property tax bill and understand how assessments work.",
+  description: "Estimate property tax with your assessed value, exemption, and local rate.",
   applicationName: "PropertyTaxCalculator",
   openGraph: {
     type: "website",
     siteName: "PropertyTaxCalculator",
-    title: "PropertyTaxCalculator — Property Tax Rates by State & County",
-    description: "Free property tax calculator. Look up property tax rates by state, county, and city. Estimate your annual property tax bill and understand how assessments work.",
-    url: "https://propertytaxcalc.net",
+    title: "PropertyTaxCalculator — Local Rate Estimator",
+    description: "Estimate property tax with your assessed value, exemption, and local rate.",
     locale: "en_US",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://propertytaxcalc.net" },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,13 +33,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen bg-white text-ink antialiased">
         <header className="border-b border-line bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+          <div className="mx-auto max-w-6xl px-4 py-4 flex flex-wrap gap-4 items-center justify-between">
             <Link href="/" className="font-serif text-xl font-bold tracking-tight">
               PropertyTaxCalculator
             </Link>
-            <nav className="hidden md:flex gap-6 text-sm">
+            <nav aria-label="Main navigation" className="flex flex-wrap gap-4 text-sm">
               <Link href="/calculator" className="hover:text-accent">Tax Calculator</Link>
-              <Link href="/learn/property-tax-rates-by-state" className="hover:text-accent">Rates by State</Link>
+              <Link href="/learn/property-tax-rates-by-state" className="hover:text-accent">Local Rates Guide</Link>
               <Link href="/about" className="hover:text-accent">About</Link>
             </nav>
           </div>
@@ -51,14 +49,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-3 gap-8 text-sm text-gray-700">
             <div>
               <div className="font-serif text-lg font-bold text-ink mb-2">PropertyTaxCalculator</div>
-              <p>Free property tax calculator. Look up property tax rates by state, county, and city. Estimate your annual property tax b...</p>
+              <p>Estimate property tax with your own assessed value and local rate.</p>
             </div>
             <div>
               <div className="font-semibold text-ink mb-2">Guides</div>
               <ul className="space-y-1">
-                <li><Link href="/learn/property-tax-rates-by-state/" className="hover:text-accent">Property Tax Rates by State</Link></li>
+                <li><Link href="/learn/property-tax-rates-by-state/" className="hover:text-accent">Finding Local Rates</Link></li>
                 <li><Link href="/learn/how-to-appeal-property-tax/" className="hover:text-accent">How to Appeal Your Property Tax</Link></li>
-                <li><Link href="/learn/states-with-lowest-property-taxes/" className="hover:text-accent">States with Lowest Property Taxes</Link></li>
+                <li><Link href="/learn/states-with-lowest-property-taxes/" className="hover:text-accent">Comparing Property Taxes</Link></li>
               </ul>
             </div>
             <div>
@@ -67,6 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><Link href="/about" className="hover:text-accent">About</Link></li>
                 <li><Link href="/privacy" className="hover:text-accent">Privacy</Link></li>
                 <li><Link href="/terms" className="hover:text-accent">Terms</Link></li>
+                <li><Link href="/methodology" className="hover:text-accent">Methodology</Link></li>
+                <li><Link href="/contact" className="hover:text-accent">Contact</Link></li>
               </ul>
             </div>
           </div>

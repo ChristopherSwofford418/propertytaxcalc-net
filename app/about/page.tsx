@@ -1,31 +1,15 @@
-import { Metadata } from "next";
-
+import type { Metadata } from "next";
+import Link from "next/link";
 export const metadata: Metadata = {
-  title: "About Us | propertytaxcalc.net",
-  description: "Learn about the mission, team, and editorial standards behind propertytaxcalc.net.",
+  title: "About",
+  description: "About this property tax estimator and its limits.",
+  alternates: { canonical: "/about/" },
 };
-
 export default function AboutPage() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">About Us</h1>
-      <div className="prose prose-blue max-w-none text-gray-600">
-        <p className="text-lg leading-relaxed mb-6">
-          Welcome to propertytaxcalc.net. We are dedicated to providing accurate, accessible, and transparent calculation tools and informational resources for our users.
-        </p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Our Mission</h2>
-        <p className="mb-6">
-          Our mission is to simplify complex financial, legal, and personal decisions through free, objective, and easy-to-use digital tools. We believe that everyone deserves access to clear information without hidden fees or confusing jargon.
-        </p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Editorial Standards</h2>
-        <p className="mb-6">
-          Every tool and article published on propertytaxcalc.net undergoes a rigorous review process. We base our formulas on established industry standards and publicly available data. Our content is designed for educational purposes and is regularly updated to reflect current methodologies.
-        </p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Independence</h2>
-        <p className="mb-6">
-          We maintain strict editorial independence. Our calculators and informational guides are not influenced by advertisers or partners. When we do partner with third parties, those relationships are clearly disclosed, and they never alter the fundamental math behind our tools.
-        </p>
-      </div>
-    </div>
-  );
+  return <article className="max-w-3xl mx-auto px-4 py-12 prose-article">
+    <h1 className="text-3xl font-bold">About PropertyTaxCalculator</h1>
+    <p>This site offers a simple educational estimator and guides to help readers understand property tax assessments. It is not an assessor or tax authority and does not provide current rates or official bills.</p>
+    <p>The calculator uses an assessed value, applicable exemption reduction, and local rate supplied by the user. See <Link href="/methodology/">methodology and sources</Link> for the formula and limitations.</p>
+    <p>Consult the appropriate local authority for a property&apos;s assessment, rates, exemptions, and appeal rules. The site is not a substitute for professional tax or legal advice.</p>
+  </article>;
 }

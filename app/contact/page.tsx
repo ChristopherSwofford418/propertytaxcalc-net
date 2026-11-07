@@ -3,6 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | propertytaxcalc.net",
   description: "Get in touch with the propertytaxcalc.net team for support, feedback, or inquiries.",
+  alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {

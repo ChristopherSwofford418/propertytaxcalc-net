@@ -3,6 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | propertytaxcalc.net",
   description: "Review the terms and conditions for using propertytaxcalc.net and its tools.",
+  alternates: { canonical: "/terms/" },
 };
 
 export default function TermsPage() {

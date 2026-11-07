@@ -3,6 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | propertytaxcalc.net",
   description: "Read the propertytaxcalc.net privacy policy to understand how we collect, use, and protect your data.",
+  alternates: { canonical: "/privacy/" },
 };
 
 export default function PrivacyPage() {
@@ -10,7 +11,7 @@ export default function PrivacyPage() {
     <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Privacy Policy</h1>
       <div className="prose prose-blue max-w-none text-gray-600">
-        <p className="mb-4"><em>Last Updated: October 2024</em></p>
+        <p className="mb-4"><em>Notice dated October 2024; advertising settings link added November 2026.</em></p>
         <p className="mb-6">
           At propertytaxcalc.net, your privacy is important to us. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our tools.
         </p>
@@ -27,6 +28,7 @@ export default function PrivacyPage() {
         <p className="mb-6">
           We use cookies to improve your experience, analyze site traffic, and serve relevant advertisements. We partner with third-party advertising networks, including Google AdSense, which use cookies to serve ads based on your prior visits to this and other websites.
         </p>
+        <p className="mb-6">You can manage or opt out of Google personalized ads using <a href="https://www.google.com/settings/ads">Google&apos;s ad settings</a>.</p>
 
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Third-Party Services</h2>
         <p className="mb-6">
